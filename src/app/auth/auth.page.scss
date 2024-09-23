@@ -1,0 +1,35 @@
+ion-text {
+  color: #1EEA00;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Montserrat, serif;
+}
+
+ion-button {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.center-row {
+  align-items: center;
+  margin-top: 30%;
+}
+
+.bottom-row {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.buttonSignUp {
+  --color: #004B40;
+  --background: #1EEA00;
+  margin-bottom: 16px;
+}
+
+.buttonLogIn {
+  --color: white;
+  --background: #004B40;
+  margin-bottom: 32px;
+}
