@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {paths} from "../../app-routing.module";
 import {Router} from "@angular/router";
+import {Paths} from "../../app-routing.module";
 
 @Component({
   selector: 'app-phone-sign-up',
@@ -32,7 +32,7 @@ export class PhoneSignUpPage implements OnInit {
 
   submit() {
     if (this.number.length === 10) {
-      this.router.navigateByUrl(paths.accountDataSignUp.toString());
+      this.router.navigateByUrl(Paths.accountDataSignUp.toString());
     }
   }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {paths} from "../../app-routing.module";
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
+import {Paths} from "../../app-routing.module";
 
 @Component({
   selector: 'app-account-data-sign-up',
@@ -22,6 +22,6 @@ export class AccountDataSignUpPage implements OnInit {
 
 
   goToTermsPage() {
-    this.router.navigateByUrl(paths.termsSignUp.toString());
+    this.router.navigateByUrl(Paths.termsSignUp.toString());
   }
 }

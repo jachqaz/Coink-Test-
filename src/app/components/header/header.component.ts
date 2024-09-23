@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
-import {paths} from "../../app-routing.module";
 import {NgOptimizedImage} from "@angular/common";
+import {Paths} from "../../app-routing.module";
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ import {NgOptimizedImage} from "@angular/common";
   standalone: true
 })
 export class HeaderComponent implements OnInit {
-  defaultHref = paths.auth.toString();
+  defaultHref = Paths.auth.toString();
   @Input() src: string = "";
   @Input() alt: string = "";
   @Input() textTitle: string = "";

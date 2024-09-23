@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {paths} from "../../app-routing.module";
+import {Paths} from "../../app-routing.module";
 
 @Component({
   selector: 'app-auth',
@@ -16,6 +16,6 @@ export class AuthPage implements OnInit {
   }
 
   goToPhonePage() {
-    this.router.navigateByUrl(paths.phoneSignUp.toString());
+    this.router.navigateByUrl(Paths.phoneSignUp.toString());
   }
 }
