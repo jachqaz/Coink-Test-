@@ -1,0 +1,28 @@
+.margin25 {
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 47px;
+  color: #757575;
+}
+
+.submitEnabled {
+  --color: #004B40;
+  --background: #1EEA00;
+}
+
+.submitDisabled {
+  --color: #757575;
+  --background: #EEEEEE;
+}
+
+ion-title {
+  padding: 0;
+}
+
+form {
+  margin-top: 24px;
+}
+
+ion-input {
+  margin-left: 7px;
+}

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {paths} from "../app-routing.module";
+import {paths} from "../../app-routing.module";
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,7 +8,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./phone-sign-up.page.scss'],
 })
 export class PhoneSignUpPage implements OnInit {
-  defaultHref = paths.auth.toString();
   number: string = '';
 
   constructor(private router: Router) {
@@ -29,8 +28,11 @@ export class PhoneSignUpPage implements OnInit {
     }
   }
 
-  submit() {
-    this.router.navigateByUrl(paths.formSignUp.toString());
+  protected readonly String = String;
 
+  submit() {
+    if (this.number.length === 10) {
+      this.router.navigateByUrl(paths.accountDataSignUp.toString());
+    }
   }
 }

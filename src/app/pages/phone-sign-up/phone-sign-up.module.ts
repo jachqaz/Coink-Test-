@@ -7,6 +7,8 @@ import {IonicModule} from '@ionic/angular';
 import {PhoneSignUpPageRoutingModule} from './phone-sign-up-routing.module';
 
 import {PhoneSignUpPage} from './phone-sign-up.page';
+import {HeaderComponent} from "../../components/header/header.component";
+import {OinkContentComponent} from "../../components/oink-content/oink-content.component";
 
 @NgModule({
   imports: [
@@ -14,6 +16,8 @@ import {PhoneSignUpPage} from './phone-sign-up.page';
     FormsModule,
     IonicModule,
     PhoneSignUpPageRoutingModule,
+    HeaderComponent,
+    OinkContentComponent,
   ],
   declarations: [PhoneSignUpPage]
 })
