@@ -1,0 +1,99 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref" icon="assets/images/ion--ios-arrow-back.svg"></ion-back-button>
+    </ion-buttons>
+    <div class="ion-text-center" style="margin-right: 10%">
+      <ion-title>NÚMERO CELULAR</ion-title>
+      <img alt="First Step" src="assets/images/firstStep.svg">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="margin25">
+    <ion-row class="row1">
+      <ion-col size="3" style="margin-right: 24px">
+        <img alt="Coink" src="assets/images/oink.svg">
+      </ion-col>
+      <ion-col style="align-content: center">
+        <ion-text>
+          Para comenzar, por favor ingresa <strong>tu número celular</strong>.
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <div class="green-line"></div>
+    <ion-card class="cardStyle">
+      <ion-card-content
+        style="font-size: 20pt"> {{ number.length === 0 ? '( X X X - X X X X X X )' : number.length >= 4 ? number.slice(0, 3) + ' ' + number.slice(3) : number }}
+      </ion-card-content>
+    </ion-card>
+    <ion-grid class="phoneGrid">
+      <ion-row>
+        <ion-col>
+          <ion-text (click)="write(1)">
+            1
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(2)">
+            2
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(3)">
+            3
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-text (click)="write(4)">
+            4
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(5)">
+            5
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(6)">
+            6
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-text (click)="write(7)">
+            7
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(8)">
+            8
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(9)">
+            9
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <img (click)="delete()" alt="Backspace" src="assets/images/backspace.svg">
+        </ion-col>
+        <ion-col>
+          <ion-text (click)="write(0)">
+            0
+          </ion-text>
+        </ion-col>
+        <ion-col>
+          <ion-icon (click)="submit()" [ngClass]="number.length === 10 ? 'iconSuccessEnabled' : 'iconSuccessDisabled'"
+                    class="iconSuccess" disabled="number.length !== 10" name="checkmark-circle"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
