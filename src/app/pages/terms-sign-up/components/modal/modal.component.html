@@ -1,0 +1,16 @@
+<ion-modal #modal (didDismiss)="goToAuth()" trigger="open-modal">
+  <ng-template>
+    <ion-content>
+      <div class="ion-text-center">
+        <img src="assets/images/oinkGift.svg">
+        <ion-title>¡Bienvenido a Coink!</ion-title>
+        <ion-text>¡Cuenta creada exitosamente,<br> tu marrano ya está listo para<br> que empieces a ahorrar!</ion-text>
+        <ion-button (click)="modal.dismiss()"
+                    shape="round">
+          CONTINUAR
+        </ion-button>
+      </div>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

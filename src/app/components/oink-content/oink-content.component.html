@@ -6,11 +6,13 @@
   </ion-col>
   <ion-col size="8.5">
     <ion-row class="title">
-      <ion-title [innerHTML]="title">
+      <ion-title>
+        <ion-text [innerHTML]="title">
+        </ion-text>
       </ion-title>
     </ion-row>
     <ion-row>
-      <ion-text [innerHTML]="subtitle">
+      <ion-text [innerHTML]="subtitle" [style]="styleSubtitle">
       </ion-text>
     </ion-row>
   </ion-col>

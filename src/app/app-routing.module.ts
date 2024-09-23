@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 export enum paths {
-  auth, phoneSignUp, accountDataSignUp, terms
+  auth, phoneSignUp, accountDataSignUp, termsSignUp
 }
 const routes: Routes = [
   {
@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: paths.accountDataSignUp.toString(),
     loadChildren: () => import('./pages/account-data-sign-up/account-data-sign-up.module').then(m => m.AccountDataSignUpPageModule)
+  },
+  {
+    path: paths.termsSignUp.toString(),
+    loadChildren: () => import('./pages/terms-sign-up/terms-sign-up.module').then(m => m.TermsSignUpPageModule)
   },
 ];
 

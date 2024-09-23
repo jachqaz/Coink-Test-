@@ -22,6 +22,6 @@ export class AccountDataSignUpPage implements OnInit {
 
 
   goToTermsPage() {
-    this.router.navigateByUrl(paths.terms.toString());
+    this.router.navigateByUrl(paths.termsSignUp.toString());
   }
 }

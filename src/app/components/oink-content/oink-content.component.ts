@@ -15,6 +15,7 @@ export class OinkContentComponent implements OnInit {
   @Input() alt: string = "";
   @Input() title: string = "";
   @Input() subtitle: string = "";
+  @Input() styleSubtitle: string = "";
 
   constructor() {
   }
