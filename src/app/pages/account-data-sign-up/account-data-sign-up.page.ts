@@ -13,7 +13,12 @@ export class AccountDataSignUpPage implements OnInit {
   userForm: FormGroup = new FormGroup({
     firstName: new FormControl(''),
   });
-
+  typeDocuments: string[] = [
+    'Tarjeta de identidad', 'Cédula de ciudadanía', 'Cédula de extranjería',
+  ];
+  genders: string[] = [
+    'Femenino', 'Masculino',
+  ];
   constructor(private router: Router) {
   }
 

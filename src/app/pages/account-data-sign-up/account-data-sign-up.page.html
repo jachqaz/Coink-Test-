@@ -13,6 +13,12 @@
     </app-oink-content>
     <form [formGroup]="userForm">
       <ion-title>Documento de identidad</ion-title>
+      <ion-item class="itemDocumentType">
+        <ion-select interface="popover" label="Tipo de documento" label-placement="floating">
+          <ion-select-option *ngFor="let typeDocument of typeDocuments" [value]="typeDocument">{{ typeDocument }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
       <ion-input
         errorText="Número de documento Invalido"
         label="Número de documento"
@@ -30,6 +36,11 @@
         label="Fecha de nacimiento"
         labelPlacement="floating"
       >
+        <ion-item class="itemGender">
+          <ion-select interface="popover" label="Genero" label-placement="floating">
+            <ion-select-option *ngFor="let gender of genders" [value]="gender">{{ gender }}</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-input>
       <ion-title style="margin-top: 32px">Configura tu cuenta</ion-title>
       <ion-input
@@ -49,21 +60,26 @@
         label="PIN de seguridad"
         labelPlacement="floating"
         type="password"
+        placeholder="PIN de seguridad"
       >
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
       <ion-input
         errorText="Confirmar PIN de seguridad Invalido"
         label="Confirmar PIN de seguridad"
         labelPlacement="floating"
         type="password"
+        placeholder="Confirmar PIN de seguridad"
       >
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
+      <ion-button (click)="goToTermsPage()" [disabled]="false" [ngClass]="true ? 'submitEnabled' : 'submitDisabled'"
+                  expand="full"
+                  shape="round"
+                  type="submit">
+        SIGUIENTE
+      </ion-button>
     </form>
-    <ion-button (click)="goToTermsPage()" [disabled]="false" [ngClass]="true ? 'submitEnabled' : 'submitDisabled'"
-                expand="full"
-                shape="round">
-      SIGUIENTE
-    </ion-button>
   </div>
 
 </ion-content>
