@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Paths} from "../../app-routing.module";
-import {UserService} from "../../services/user.service";
+import {UserService} from "../../../data/services/user.service";
 
 @Component({
   selector: 'app-phone-sign-up',

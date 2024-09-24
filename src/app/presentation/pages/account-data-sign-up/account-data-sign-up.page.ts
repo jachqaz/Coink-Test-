@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
 import {Paths} from "../../app-routing.module";
-import {UserService} from "../../services/user.service";
-import {User} from "../../models/user";
+import {UserService} from "../../../data/services/user.service";
+import {User} from "../../../domain/models/user";
 
 @Component({
   selector: 'app-account-data-sign-up',
