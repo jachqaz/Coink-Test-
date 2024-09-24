@@ -1,0 +1,48 @@
+<app-header [alt]='String("Final Step")'
+            [src]='String("assets/images/finalStep.svg")'
+            [textTitle]='String("FINALIZAR")'>
+</app-header>
+<ion-content [fullscreen]="true">
+  <div class="margin25">
+    <app-oink-content
+      [alt]='String("Coink")'
+      [src]='String("assets/images/oinkPolicia.svg")'
+      [styleSubtitle]='String("font-size: 10pt")'
+      [subtitle]='String("Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.")'
+      [title]='String("ESTAS MUY CERCA DE <br> SER PARTE DE COINK.")'
+    >
+    </app-oink-content>
+    <ion-title style="margin-top: 40px">
+      LO MÁS IMPORTANTE
+    </ion-title>
+    <ion-text style="font-size: 10pt">
+      <p>
+        Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra
+        legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones.
+      </p>
+      <p>
+        Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el
+        mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de
+        un Depósito Ordinario COINK Persona Natural.
+      </p>
+      <p>
+        Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo,
+        tus movimientos, realizar tus transacciones y administrar tu cuenta.
+      </p>
+      <p>
+        Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.
+      </p>
+    </ion-text>
+    <ion-title style="margin-top: 40px">
+      <u>Lee tu contrato</u>
+    </ion-title>
+    <ion-checkbox (ionChange)="checkTerms=!checkTerms" labelPlacement="end">He leído ya acepto el contrato
+    </ion-checkbox>
+    <ion-button [disabled]="!checkTerms" [ngClass]="checkTerms ? 'submitEnabled' : 'submitDisabled'" expand="full"
+                id="open-modal"
+                shape="round">
+      ACEPTAR
+    </ion-button>
+  </div>
+  <app-modal></app-modal>
+</ion-content>

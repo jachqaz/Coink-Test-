@@ -1,0 +1,31 @@
+<svg height="18" viewBox="0 0 188 18" width="188" xmlns="http://www.w3.org/2000/svg">
+  <g data-name="Grupo 20670" id="Grupo_20670" transform="translate(-934 161)">
+    <g data-name="Elipse 1806" fill="none" id="Elipse_1806" stroke="#1eea00" stroke-width="1"
+       transform="translate(1019 -161)">
+      <circle cx="9" cy="9" r="9" stroke="none"/>
+      <circle cx="9" cy="9" fill="none" r="8.5"/>
+    </g>
+    <g data-name="Elipse 1807" fill="none" id="Elipse_1807" stroke="#1eea00" stroke-width="1"
+       transform="translate(1104 -161)">
+      <circle cx="9" cy="9" r="9" stroke="none"/>
+      <circle cx="9" cy="9" fill="none" r="8.5"/>
+    </g>
+    <g data-name="Grupo 20669" id="Grupo_20669" transform="translate(0 1)">
+      <g data-name="Elipse 1804" fill="none" id="Elipse_1804" stroke="#1eeb00" stroke-width="1"
+         transform="translate(934 -162)">
+        <circle cx="9" cy="9" r="9" stroke="none"/>
+        <circle cx="9" cy="9" fill="none" r="8.5"/>
+      </g>
+      <circle cx="6" cy="6" data-name="Elipse 1805" fill="#1eea00" id="Elipse_1805" r="6"
+              transform="translate(937 -159)"/>
+    </g>
+    <line data-name="Línea 1" fill="none" id="Línea_1" stroke="#a8a8a8" stroke-linecap="round" stroke-width="1"
+          transform="translate(960 -152.5)" x2="51"/>
+    <line data-name="Línea 2" fill="none" id="Línea_2" stroke="#a8a8a8" stroke-linecap="round" stroke-width="1"
+          transform="translate(1045 -152.5)" x2="51"/>
+    <circle cx="6" cy="6" data-name="Elipse 1808" fill="#1eea00" id="Elipse_1808" r="6"
+            transform="translate(1022 -158)"/>
+    <circle cx="6" cy="6" data-name="Elipse 1809" fill="#1eea00" id="Elipse_1809" r="6"
+            transform="translate(1107 -158)"/>
+  </g>
+</svg>

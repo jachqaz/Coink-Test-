@@ -1,0 +1,29 @@
+.margin25 {
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 40px;
+}
+
+.submitEnabled {
+  --color: #004B40;
+  --background: #1EEA00;
+}
+
+.submitDisabled {
+  --color: #757575;
+  --background: #EEEEEE;
+}
+
+ion-title {
+  padding: 0;
+}
+
+ion-checkbox {
+  margin-top: 16px;
+  color: #004B40;
+}
+
+ion-button {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
