@@ -13,7 +13,8 @@
     </app-oink-content>
     <form (ngSubmit)="goToTermsPage()" [formGroup]="userForm">
       <ion-title>Documento de identidad</ion-title>
-      <ion-item class="itemSelect">
+      <ion-skeleton-text *ngIf="loadingTypeDocuments" [animated]="true"></ion-skeleton-text>
+      <ion-item *ngIf="!loadingTypeDocuments" class="itemSelect">
         <ion-select [(ngModel)]="user.typeDocument"
                     formControlName="typeDocument"
                     id="typeDocument"
@@ -61,7 +62,8 @@
         type="date"
       >
       </ion-input>
-      <ion-item class="itemSelect">
+      <ion-skeleton-text *ngIf="loadingGenders" [animated]="true"></ion-skeleton-text>
+      <ion-item *ngIf="!loadingGenders" class="itemSelect">
         <ion-select [(ngModel)]="user.gender"
                     formControlName="gender"
                     id="gender"

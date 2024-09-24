@@ -14,6 +14,10 @@ import {User} from "../../../domain/models/user";
 export class AccountDataSignUpPage implements OnInit {
   protected readonly String = String;
   user: User = this.userService.user;
+  typeDocuments: string[] = [];
+  genders: string[] = [];
+  loadingTypeDocuments = true;
+  loadingGenders = true;
   userForm: FormGroup = new FormGroup({
     typeDocument: new FormControl(''),
     numberDocument: new FormControl(''),
@@ -31,17 +35,30 @@ export class AccountDataSignUpPage implements OnInit {
       return control.value !== this.user.password ? {'mismatch': true} : null;
     }),
   });
-  typeDocuments: string[] = [
-    'Tarjeta de identidad', 'Cédula de ciudadanía', 'Cédula de extranjería',
-  ];
-  genders: string[] = [
-    'Femenino', 'Masculino',
-  ];
+
 
   constructor(private router: Router, private userService: UserService) {
   }
 
   ngOnInit() {
+    this.userService.getDocumentTypes().then(typeDocuments => {
+      this.typeDocuments = typeDocuments
+    }).catch(error => {
+      console.error(error)
+      this.typeDocuments = [
+        'Tarjeta de identidad', 'Cédula de ciudadanía', 'Cédula de extranjería',
+      ];
+    });
+    this.loadingTypeDocuments = false;
+    this.userService.getGenders().then(genders => {
+      this.typeDocuments = genders
+    }).catch(error => {
+      console.error(error)
+      this.genders = [
+        'Femenino', 'Masculino',
+      ];
+    });
+    this.loadingGenders = false;
   }
 
 
