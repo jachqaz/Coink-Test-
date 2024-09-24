@@ -11,69 +11,120 @@
       [subtitle]='String("Ahora necesitamos saber algunos datos tuyos")'
     >
     </app-oink-content>
-    <form [formGroup]="userForm">
+    <form (ngSubmit)="goToTermsPage()" [formGroup]="userForm">
       <ion-title>Documento de identidad</ion-title>
-      <ion-item class="itemDocumentType">
-        <ion-select interface="popover" label="Tipo de documento" label-placement="floating">
+      <ion-item class="itemSelect">
+        <ion-select [(ngModel)]="user.typeDocument"
+                    formControlName="typeDocument"
+                    id="typeDocument"
+                    interface="popover"
+                    label="Tipo de documento"
+                    label-placement="floating"
+                    required>
           <ion-select-option *ngFor="let typeDocument of typeDocuments" [value]="typeDocument">{{ typeDocument }}
           </ion-select-option>
         </ion-select>
       </ion-item>
+      <ion-text *ngIf="userForm.controls['typeDocument'].invalid&&!userForm.controls['typeDocument'].untouched"
+                class="errorMessage">Tipo de documento es requerido
+      </ion-text>
       <ion-input
+        [(ngModel)]="user.numberDocument"
         errorText="Número de documento Invalido"
         label="Número de documento"
         labelPlacement="floating"
+        formControlName="numberDocument"
+        id="numberDocument"
+        required
+        type="number"
       >
       </ion-input>
       <ion-input
+        [(ngModel)]="user.expeditionDate"
         errorText="Fecha de expedición del documento Invalido"
         label="Fecha de expedición del documento"
         labelPlacement="floating"
+        formControlName="expeditionDate"
+        id="expeditionDate"
+        required
+        type="date"
       >
       </ion-input>
       <ion-input
+        [(ngModel)]="user.birthDate"
         errorText="Fecha de nacimiento Invalido"
         label="Fecha de nacimiento"
         labelPlacement="floating"
+        formControlName="birthDate"
+        id="birthDate"
+        required
+        type="date"
       >
-        <ion-item class="itemGender">
-          <ion-select interface="popover" label="Genero" label-placement="floating">
-            <ion-select-option *ngFor="let gender of genders" [value]="gender">{{ gender }}</ion-select-option>
-          </ion-select>
-        </ion-item>
       </ion-input>
+      <ion-item class="itemSelect">
+        <ion-select [(ngModel)]="user.gender"
+                    formControlName="gender"
+                    id="gender"
+                    interface="popover"
+                    label="Genero"
+                    label-placement="floating"
+                    required>
+          <ion-select-option *ngFor="let gender of genders" [value]="gender">{{ gender }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-text *ngIf="userForm.controls['gender'].invalid&&!userForm.controls['gender'].untouched"
+                class="errorMessage">Genero es requerido
+      </ion-text>
+
       <ion-title style="margin-top: 32px">Configura tu cuenta</ion-title>
       <ion-input
+        [(ngModel)]="user.email"
         errorText="Correo electrónico Invalido"
         label="Correo electrónico"
         labelPlacement="floating"
+        email
+        formControlName="email"
+        id="email"
+        required
+        type="email"
       >
       </ion-input>
       <ion-input
+        formControlName="emailRepeat"
         errorText="Confirmar correo electrónico Invalido"
         label="Confirmar correo electrónico"
         labelPlacement="floating"
+        id="emailRepeat"
+        required
+        type="email"
       >
       </ion-input>
       <ion-input
+        [(ngModel)]="user.password"
         errorText="PIN de seguridad Invalido"
         label="PIN de seguridad"
         labelPlacement="floating"
         type="password"
         placeholder="PIN de seguridad"
+        formControlName="password"
+        id="password"
+        required
       >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
       <ion-input
+        formControlName="passwordRepeat"
         errorText="Confirmar PIN de seguridad Invalido"
         label="Confirmar PIN de seguridad"
         labelPlacement="floating"
         type="password"
         placeholder="Confirmar PIN de seguridad"
+        id="passwordRepeat"
+        required
       >
         <ion-input-password-toggle slot="end"></ion-input-password-toggle>
       </ion-input>
-      <ion-button (click)="goToTermsPage()" [disabled]="false" [ngClass]="true ? 'submitEnabled' : 'submitDisabled'"
+      <ion-button [disabled]="!userForm.valid" [ngClass]="userForm.valid ? 'submitEnabled' : 'submitDisabled'"
                   expand="full"
                   shape="round"
                   type="submit">

@@ -9,7 +9,7 @@ import {AccountDataSignUpPageRoutingModule} from './account-data-sign-up-routing
 import {AccountDataSignUpPage} from './account-data-sign-up.page';
 import {HeaderComponent} from "../../components/header/header.component";
 import {OinkContentComponent} from "../../components/oink-content/oink-content.component";
-import {MatFormField} from "@angular/material/form-field";
+import {MatError, MatFormField} from "@angular/material/form-field";
 
 @NgModule({
   imports: [
@@ -21,6 +21,7 @@ import {MatFormField} from "@angular/material/form-field";
     OinkContentComponent,
     ReactiveFormsModule,
     MatFormField,
+    MatError,
   ],
   declarations: [AccountDataSignUpPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

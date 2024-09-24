@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Paths} from "../../../../app-routing.module";
+import {UserService} from "../../../../services/user.service";
 
 @Component({
   selector: 'app-modal',
@@ -9,13 +10,14 @@ import {Paths} from "../../../../app-routing.module";
 })
 export class ModalComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
   }
 
   ngOnInit() {
   }
 
   goToAuth() {
+    console.log(this.userService.user);
     this.router.navigateByUrl(Paths.auth.toString());
   }
 }
