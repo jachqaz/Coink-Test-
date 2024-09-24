@@ -10,7 +10,7 @@ export class Paths {
 const routes: Routes = [
   {
     path: '',
-    redirectTo: Paths.accountDataSignUp.toString(),
+    redirectTo: Paths.auth.toString(),
     pathMatch: 'full'
   },
   {
